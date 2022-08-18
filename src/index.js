@@ -1,3 +1,9 @@
-let a = alert('a')
+const Open = document.getElementById('open')
+Open.addEventListener('click', openForm)
 
-return a
+function openForm(){
+    const form = document.getElementById('Form');
+    form.classList.add('active')
+} 
+  
+

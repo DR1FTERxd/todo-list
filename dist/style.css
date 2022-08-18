@@ -1,0 +1,6 @@
+#Form{
+    display: none;
+}
+.active#Form{
+    display: block;
+}

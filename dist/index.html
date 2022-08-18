@@ -5,9 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="header">
+        <header>
+            <p>todo-est</p>
+        </header>
+    </div>
+
+    <button id='open'></button>
+
+    <div  id="Form">
+        <h1>New todo</h1>
+
+        <form class ="form-container">
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="name" name="name" required>
+
+
+
+            <button type="submit" class="btn">Make a todo</button>
+            <button type="button" class="btncancel" onclick="closeForm()">close</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
     <script src="./main.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-alert("a");
+document.getElementById("open").addEventListener("click",(function(){document.getElementById("Form").classList.add("active")}));
