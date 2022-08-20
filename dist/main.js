@@ -1,1 +1,1 @@
-document.getElementById("open").addEventListener("click",(function(){document.getElementById("Form").classList.add("active")}));
+document.getElementById("open").addEventListener("click",(function(){document.getElementById("Form").classList.add("active")})),document.getElementById("close").addEventListener("click",(function(){document.getElementById("Form").classList.remove("active")}));

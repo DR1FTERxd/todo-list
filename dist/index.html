@@ -9,24 +9,25 @@
 </head>
 <body>
     <div class="header">
-        <header>
-            <p>todo-est</p>
-        </header>
+            <div id="name">
+                <p>todo-est</p>
+            </div>
+            <img src="/dist/icons/plus.svg" alt="" id="open">
     </div>
 
-    <button id='open'></button>
+
 
     <div  id="Form">
         <h1>New todo</h1>
 
         <form class ="form-container">
-            <label for="name"><b>Name</b></label>
+            <label for="name"><b>name</b></label>
             <input type="text" placeholder="name" name="name" required>
 
 
 
             <button type="submit" class="btn">Make a todo</button>
-            <button type="button" class="btncancel" onclick="closeForm()">close</button>
+            <button type="button" class="btncancel" onclick="closeForm()" id="close">close</button>
         </form>
     </div>
 
