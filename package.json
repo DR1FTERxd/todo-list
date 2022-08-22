@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@mdi/js": "^7.0.96",
-    "@mdi/react": "^1.6.1"
+    "@mdi/react": "^1.6.1",
+    "date-fns": "^2.29.2"
   }
 }

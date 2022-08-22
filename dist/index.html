@@ -22,19 +22,37 @@
                 <h1>New todo</h1>
 
                 <form class ="form-container">
-                    <label for="name"><b>name</b></label>
-                    <input type="text" placeholder="name" name="name" required>
+                    <label for="title"><b>name</b></label>
+                    <input type="text" placeholder="title" name="title" required>
+                    
+                    <label for="description"><b>description</b></label>
+                    <input type="text" name="description" id="description" required>
 
+                    <label for="due_date"><b>due date</b></label>
+                    <input type="datetime-local" name="due_date" id="due_date" required>
 
+                    <label for="priority"><b>priority</b></label>
+                    <input list="priority">
+                    <datalist id="priority">
+                        <option value="high"></option>
+                        <option value="medium"></option>
+                        <option value="low"></option>
+                    </datalist>
 
                     <button type="submit" class="btn">Make a todo</button>
                     <button type="button" class="btncancel" onclick="closeForm()" id="close">close</button>
+
+
                 </form>
             </div> 
         </div>
 
 
+    <div class="screen">
+        <div id="todo">
 
+        </div>
+    </div>
 
 
 
