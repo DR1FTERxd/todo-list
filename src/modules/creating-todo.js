@@ -1,14 +1,9 @@
-class todo{
-    constructor(title, description, due_date, priority){
-        title = document.getElementById('title')
-        description= document.getElementById('description')
-        due_date= document.getElementById('due_date')
-        priority= document.getElementById('priority')
-    }
-}
+let title = document.getElementById('title').value;
+console.log(title);
 
-function render2(){
-    createAtodo()
-}
+function work2(){
+    addATodo();
+    createAtodo();
+};
 
-export default render2
+export default work2
