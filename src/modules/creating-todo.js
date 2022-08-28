@@ -1,3 +1,4 @@
+import { mdiDiscPlayer } from "@mdi/js";
 
 
 const todoBtn = document.getElementById('btnadd');
@@ -35,9 +36,37 @@ function addTodo(event) {
     console.log(priority)
 }
 
+function render() {
+    const screen= document.querySelector('.screen');
+    const todos = document.querySelectorAll('.todo');
+
+    todos.forEach(todo => screen.removeChild(todo))
+
+    for (let i=0; i<mytodos.length; i++){
+        addTodo(mytodos[i])
+    }
+}
+
+function post(item) {
+    const todos = document.getElementById('todos');
+    const todo = document.createElement('div')
+    const title = document.createElement('div')
+
+
+    todo.classList.add('book');
+    todo.setAttribute('id', mytodos.indexOf(item));
+
+    title.textContent = item.title;
+    title.setAttribute('todo_name', 'id');
+    todo.appendChild(nam);    
+
+
+
+}
 
 function work2(){
     addTodo();
+    render();
 };
 
 export default work2()

@@ -32,12 +32,11 @@
                     <input type="datetime-local" name="due_date" id="due_date"  >
 
                     <label for="priority" ><b>priority</b></label>
-                    <input list="priority">
-                    <datalist id="priority">
+                    <select id="priority">
                         <option value="high">high</option>
-                        <option value="medium"></option>
-                        <option value="low"></option>
-                    </datalist>
+                        <option value="medium">medium</option>
+                        <option value="low">low</option>
+                    </select>
 
                     <button type="submit" id="btnadd" >Make a todo</button>
                     <button type="button" id="btncancel"  >close</button>
@@ -49,11 +48,13 @@
 
 
     <div class="screen">
-        <div class="todo" id="1">
-            <div id='todo_name'>Home work</div>
-            <div id='todo_discripton'>chemistry Home work</div>
-            <div id="todo_timeleft">3d: 4h: 52min</div>
-            <div id="todo_priority">high</div>
+        <div class="todos">
+            <div class="todo" id="1">
+                <div id='todo_name'>Home work</div>
+                <div id='todo_discripton'>chemistry Home work</div>
+                <div id="todo_timeleft">3d: 4h: 52min</div>
+                <div id="todo_priority">high</div>
+            </div>
         </div>
     </div>
 
