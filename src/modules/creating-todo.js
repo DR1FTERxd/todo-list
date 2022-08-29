@@ -1,4 +1,6 @@
-import { mdiDiscPlayer } from "@mdi/js";
+import { set } from "date-fns";
+import todoPopup from "./todo-popup";
+
 
 
 const todoBtn = document.getElementById('btnadd');
@@ -12,7 +14,7 @@ let priority = document.getElementById('priority').value;
 
 
 let mytodos = [];
-
+let todolength = mytodos.length
 let newTodo;
 
 
@@ -33,40 +35,73 @@ function addTodo(event) {
     newTodo = new Todo (title, description, due_date, priority)
     mytodos.push(newTodo)
     console.log(mytodos)
-    console.log(priority)
+    console.log(newTodo.title)
+    console.log(newTodo.description)
+    console.log(newTodo.due_date)
+    console.log(newTodo.priority)
+    console.log(JSON.stringify(newTodo))
+    Todo_items();
+    render()
+    setData()
 }
 
 function render() {
-    const screen= document.querySelector('.screen');
+    const display = document.querySelector('.todos');
     const todos = document.querySelectorAll('.todo');
-
-    todos.forEach(todo => screen.removeChild(todo))
+    todos.forEach(todo => display.removeChild(todo));
 
     for (let i=0; i<mytodos.length; i++){
-        addTodo(mytodos[i])
+        Todo_items(mytodos[i])
     }
 }
 
-function post(item) {
-    const todos = document.getElementById('todos');
-    const todo = document.createElement('div')
-    const title = document.createElement('div')
+function Todo_items(item) {
+    const todos = document.querySelector('.todos');
+    const todo = document.createElement('div');
+    const titl = document.createElement('div');
+    const description = document.createElement('div');
+    const due_date = document.createElement('div');
+    const priority = document.createElement('div');
 
-
-    todo.classList.add('book');
+    todo.classList.add('todo');
     todo.setAttribute('id', mytodos.indexOf(item));
 
-    title.textContent = item.title;
-    title.setAttribute('todo_name', 'id');
-    todo.appendChild(nam);    
+    titl.textContent = item.title
+    titl.setAttribute('id', 'todo_name');
+    todo.appendChild(titl);
 
+    description.textContent = item.description
+    description.setAttribute('id', 'description');
+    todo.appendChild(description);
 
+    due_date.textContent = item.due_date
+    due_date.setAttribute('id', 'due_date');
+    todo.appendChild(due_date);
 
+    priority.textContent = item.priority
+    priority.setAttribute('id', 'priority');
+    todo.appendChild(priority);
+
+    todos.appendChild(todo)
+}
+function setData() {
+    localStorage.setItem(mytodos, JSON.stringify(mytodos));
+}
+function restore() {
+    if(!localStorage.mytodos){
+        render()
+    } else {
+        let objects = localStorage.getItem("mytodos")
+        objects =JSON.parse(objects)
+        mytodos = objects
+        render()
+    }
 }
 
 function work2(){
     addTodo();
-    render();
+    restore()
+    
 };
 
 export default work2()
