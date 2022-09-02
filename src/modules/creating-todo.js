@@ -1,5 +1,5 @@
 import { set } from "date-fns";
-import todoPopup from "./todo-popup";
+
 
 
 
@@ -7,10 +7,7 @@ const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
 
 
-let title = document.getElementById("title").value;
-let description = document.getElementById("description").value;
-let due_date = document.getElementById("due_date").value;
-let priority = document.getElementById('priority').value;
+
 
 
 let mytodos = [];
@@ -40,7 +37,6 @@ function addTodo(event) {
     console.log(newTodo.due_date)
     console.log(newTodo.priority)
     console.log(JSON.stringify(newTodo))
-    Todo_items();
     render()
     setData()
 }
@@ -80,6 +76,7 @@ function Todo_items(item) {
 
     priority.textContent = item.priority
     priority.setAttribute('id', 'priority');
+
     todo.appendChild(priority);
 
     todos.appendChild(todo)
@@ -98,10 +95,31 @@ function restore() {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function work2(){
     addTodo();
     restore()
-    
+    prioritylog()
 };
 
 export default work2()
