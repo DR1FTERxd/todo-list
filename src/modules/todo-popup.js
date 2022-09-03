@@ -20,6 +20,7 @@ function closeForm(){
 function work(){
     closeForm();
     openForm();
+    
 }
 
-export default work();
+export {work}

@@ -1,6 +1,8 @@
-import { mdiPowerSocketJp } from "@mdi/js";
 
-var end = new Date('02/19/2012 10:1 AM');
+
+
+function alertime() {
+    var end = new Date('02/19/2023 10:1 AM'); // dummy date 
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -30,11 +32,14 @@ var end = new Date('02/19/2012 10:1 AM');
     }
 
     timer = setInterval(showRemaining, 1000);
+}
 
 
-    function work3() {
-        showRemaining()
-    }
 
 
-    export default work3();
+function work3() {
+    alertime()
+    
+}
+
+export default work3()

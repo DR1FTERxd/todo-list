@@ -1,13 +1,8 @@
+import { mdiCardsPlayingSpadeMultiple } from "@mdi/js";
 import { set } from "date-fns";
-
-
-
 
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
-
-
-
 
 
 let mytodos = [];
@@ -97,29 +92,11 @@ function restore() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function work2(){
     addTodo();
     restore()
     prioritylog()
+    console.log('aa')
 };
 
-export default work2()
+export {work2}
