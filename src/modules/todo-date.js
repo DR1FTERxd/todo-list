@@ -2,8 +2,9 @@
 
 
 function alertime() {
-    var end = new Date('02/19/2023 10:1 AM'); // dummy date 
-
+    
+    var end = new Date(document.getElementById('due_date').value); // dummy date 
+    //var end = new Date('2022-09-16T22:51');
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
@@ -42,4 +43,4 @@ function work3() {
     
 }
 
-export default work3()
+export default work3() 

@@ -1,5 +1,4 @@
-import { mdiCardsPlayingSpadeMultiple } from "@mdi/js";
-import { set } from "date-fns";
+
 
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
@@ -51,7 +50,7 @@ function Todo_items(item) {
     const todo = document.createElement('div');
     const titl = document.createElement('div');
     const description = document.createElement('div');
-    const due_date = document.createElement('div');
+    const due_date = document.createElement('div')
     const priority = document.createElement('div');
 
     todo.classList.add('todo');
@@ -65,8 +64,8 @@ function Todo_items(item) {
     description.setAttribute('id', 'description');
     todo.appendChild(description);
 
-    due_date.textContent = item.due_date
-    due_date.setAttribute('id', 'due_date');
+    
+    due_date.setAttribute('id', 'countdown');
     todo.appendChild(due_date);
 
     priority.textContent = item.priority
