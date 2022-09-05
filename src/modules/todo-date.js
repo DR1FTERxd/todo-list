@@ -1,16 +1,18 @@
+import {newTodo} from './creating-todo'
+import {time_s} from './creating-todo'
 
 
-
-function alertime() {
-    
-    var end = new Date(document.getElementById('due_date').value); // dummy date 
+function alertime(e) {
+    var end = new Date(time_s); // dummy date
     //var end = new Date('2022-09-16T22:51');
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
     var _day = _hour * 24;
     var timer;
+    console.log(time_s)
 
+    
     function showRemaining() {
         var now = new Date();
         var distance = end - now;

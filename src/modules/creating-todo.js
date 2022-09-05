@@ -1,4 +1,4 @@
-
+import {showRemaining} from './todo-date'
 
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
@@ -7,7 +7,6 @@ todoBtn.addEventListener('click', addTodo)
 let mytodos = [];
 let todolength = mytodos.length
 let newTodo;
-
 
 
 
@@ -24,16 +23,20 @@ function addTodo(event) {
     event.preventDefault();
 
     newTodo = new Todo (title, description, due_date, priority)
+    let time = newTodo.due_date;
+    let time_s = JSON.stringify(time)
+    //console.log(time_s)
+    
     mytodos.push(newTodo)
     console.log(mytodos)
-    console.log(newTodo.title)
-    console.log(newTodo.description)
-    console.log(newTodo.due_date)
-    console.log(newTodo.priority)
+    
     console.log(JSON.stringify(newTodo))
     render()
     setData()
+    showRemaining()
+    
 }
+
 
 function render() {
     const display = document.querySelector('.todos');
@@ -51,6 +54,7 @@ function Todo_items(item) {
     const titl = document.createElement('div');
     const description = document.createElement('div');
     const due_date = document.createElement('div')
+    const due_date_value = document.createElement('div')
     const priority = document.createElement('div');
 
     todo.classList.add('todo');
@@ -65,6 +69,8 @@ function Todo_items(item) {
     todo.appendChild(description);
 
     
+
+
     due_date.setAttribute('id', 'countdown');
     todo.appendChild(due_date);
 
@@ -98,4 +104,6 @@ function work2(){
     console.log('aa')
 };
 
+
 export {work2}
+export let time_s
