@@ -1,16 +1,19 @@
-import {newTodo} from './creating-todo'
+
+
 import {time_s} from './creating-todo'
 
-
 function alertime(e) {
-    var end = new Date(time_s); // dummy date
+    var end = new Date(time_s); 
     //var end = new Date('2022-09-16T22:51');
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
     var _day = _hour * 24;
     var timer;
-    console.log(time_s)
+    
+
+    
+    
 
     
     function showRemaining() {
@@ -37,12 +40,12 @@ function alertime(e) {
     timer = setInterval(showRemaining, 1000);
 }
 
-
+//i will be proboably switching to date-fns because for this logic i cant. Make the Date read the time let element wich has the time built in but it cannot readit
 
 
 function work3() {
     alertime()
-    
+   
 }
 
 export default work3() 

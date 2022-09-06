@@ -1,4 +1,4 @@
-import {showRemaining} from './todo-date'
+
 
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
@@ -7,8 +7,8 @@ todoBtn.addEventListener('click', addTodo)
 let mytodos = [];
 let todolength = mytodos.length
 let newTodo;
-
-
+let time;
+let time_s;
 
 class Todo {
     constructor(title, description, due_date, priority) {
@@ -23,12 +23,12 @@ function addTodo(event) {
     event.preventDefault();
 
     newTodo = new Todo (title, description, due_date, priority)
-    let time = newTodo.due_date;
-    let time_s = JSON.stringify(time)
-    //console.log(time_s)
+    time = newTodo.due_date;
+    time_s = JSON.stringify(time)
     
     mytodos.push(newTodo)
     console.log(mytodos)
+    
     
     console.log(JSON.stringify(newTodo))
     render()
@@ -102,8 +102,8 @@ function work2(){
     restore()
     prioritylog()
     console.log('aa')
+    
 };
 
-
+export default time_s
 export {work2}
-export let time_s
