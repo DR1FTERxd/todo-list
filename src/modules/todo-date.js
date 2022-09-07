@@ -1,43 +1,15 @@
+import { formatDistanceToNow } from "date-fns"
+import { deAT } from "date-fns/locale";
+
+import { time_s } from './creating-todo'
 
 
-import {time_s} from './creating-todo'
-
-function alertime(e) {
-    var end = new Date(time_s); 
-    //var end = new Date('2022-09-16T22:51');
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
+function alertime() {
     
-
-    
-    
-
-    
-    function showRemaining() {
-        var now = new Date();
-        var distance = end - now;
-        if (distance < 0) {
-
-            clearInterval(timer);
-            document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
-            return;
-        }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        var minutes = Math.floor((distance % _hour) / _minute);
-        var seconds = Math.floor((distance % _minute) / _second);
-
-        document.getElementById('countdown').innerHTML = days + 'days ';
-        document.getElementById('countdown').innerHTML += hours + 'hrs ';
-        document.getElementById('countdown').innerHTML += minutes + 'mins ';
-        document.getElementById('countdown').innerHTML += seconds + 'secs';
-    }
-
-    timer = setInterval(showRemaining, 1000);
+    const result = formatDistanceToNow(
+        new Date(time_s.toString())
+    )
+    document.getElementById('countdown').innerHTML = result;
 }
 
 //i will be proboably switching to date-fns because for this logic i cant. Make the Date read the time let element wich has the time built in but it cannot readit
@@ -48,4 +20,4 @@ function work3() {
    
 }
 
-export default work3() 
+export {work3, alertime}

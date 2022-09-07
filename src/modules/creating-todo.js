@@ -1,7 +1,8 @@
-
+import {alertime} from './todo-date'
 
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
+
 
 
 let mytodos = [];
@@ -23,17 +24,15 @@ function addTodo(event) {
     event.preventDefault();
 
     newTodo = new Todo (title, description, due_date, priority)
-    time = newTodo.due_date;
-    time_s = JSON.stringify(time)
-    
     mytodos.push(newTodo)
     console.log(mytodos)
-    
-    
+    time = newTodo.due_date
+    time_s = JSON.stringify(time)
+    console.log(time_s)
     console.log(JSON.stringify(newTodo))
     render()
     setData()
-    showRemaining()
+    alertime();
     
 }
 
@@ -67,8 +66,6 @@ function Todo_items(item) {
     description.textContent = item.description
     description.setAttribute('id', 'description');
     todo.appendChild(description);
-
-    
 
 
     due_date.setAttribute('id', 'countdown');
