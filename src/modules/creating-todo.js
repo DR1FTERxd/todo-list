@@ -9,7 +9,7 @@ let mytodos = [];
 let todolength = mytodos.length
 let newTodo;
 let time;
-let time_s;
+let time_s; 
 
 class Todo {
     constructor(title, description, due_date, priority) {
@@ -28,7 +28,7 @@ function addTodo(event) {
     console.log(mytodos)
     time = newTodo.due_date
     time_s = JSON.stringify(time)
-    console.log(time_s)
+   // console.log(time_s)
     console.log(JSON.stringify(newTodo))
     render()
     setData()
@@ -102,5 +102,5 @@ function work2(){
     
 };
 
-export default time_s
-export {work2}
+
+export {work2, time_s}
