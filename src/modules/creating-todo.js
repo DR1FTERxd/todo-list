@@ -3,13 +3,12 @@ import {alertime} from './todo-date'
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
 
+const form = document.getElementById('Form');
+
 
 
 let mytodos = [];
-let todolength = mytodos.length
 let newTodo;
-let time;
-let time_s; 
 
 class Todo {
     constructor(title, description, due_date, priority) {
@@ -22,17 +21,13 @@ class Todo {
 
 function addTodo(event) {
     event.preventDefault();
-
+    form.classList.remove('active')
     newTodo = new Todo (title, description, due_date, priority)
     mytodos.push(newTodo)
     console.log(mytodos)
-    time = newTodo.due_date
-    time_s = JSON.stringify(time)
-   // console.log(time_s)
-    console.log(JSON.stringify(newTodo))
     render()
     setData()
-    alertime();
+  
     
 }
 
@@ -53,7 +48,7 @@ function Todo_items(item) {
     const titl = document.createElement('div');
     const description = document.createElement('div');
     const due_date = document.createElement('div')
-    const due_date_value = document.createElement('div')
+
     const priority = document.createElement('div');
 
     todo.classList.add('todo');
@@ -67,7 +62,7 @@ function Todo_items(item) {
     description.setAttribute('id', 'description');
     todo.appendChild(description);
 
-
+    due_date.textContent = item.due_date
     due_date.setAttribute('id', 'countdown');
     todo.appendChild(due_date);
 
@@ -97,10 +92,9 @@ function restore() {
 function work2(){
     addTodo();
     restore()
-    prioritylog()
-    console.log('aa')
+    
     
 };
 
 
-export {work2, time_s}
+export {work2}

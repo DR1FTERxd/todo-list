@@ -23,16 +23,16 @@
 
                 <form class ="form-container">
                     <label for="title"><b>name</b></label>
-                    <input type="text" placeholder="title" name="title" id="title" value="">
+                    <input type="text"  placeholder="title" name="title" id="title" required>
                     
                     <label for="description"><b>description</b></label>
-                    <input type="text" name="description" id="description" >
+                    <input type="text" name="description" id="description">
 
                     <label for="due_date"><b>due date</b></label>
-                    <input type="datetime-local" :value="date" id="due_date">
+                    <input type="date" value="date" id="due_date" required>
 
                     <label for="priority" ><b>priority</b></label>
-                    <select id="priority">
+                    <select id="priority" required>
                         <option value="high">high</option>
                         <option value="medium">medium</option>
                         <option value="low">low</option>
@@ -49,13 +49,9 @@
 
     <div class="screen">
         <div class="todos">
-            <div class="todo" id="1">
-                <div id='todo_name'>Home work</div>
-                <div id='todo_discripton'>chemistry Home work</div>
-                <div id="countdown"></div>
-                <div id="todo_priority">high</div>
-            </div>
+            
         </div>
+    </div>
        
         
 

@@ -6,7 +6,7 @@ import {work3} from './modules/todo-date'
 function render(){
     work();
     work2();
-    work3();
+ 
    
 }
 
