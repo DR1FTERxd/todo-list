@@ -1,3 +1,4 @@
+import { mdiConsoleNetworkOutline } from '@mdi/js';
 import {alertime} from './todo-date'
 
 const todoBtn = document.getElementById('btnadd');
@@ -12,22 +13,24 @@ let newTodo;
 
 class Todo {
     constructor(title, description, due_date, priority) {
-        this.title = title = document.getElementById("title").value;
-        this.description = description = document.getElementById("description").value;
-        this.due_date = due_date = document.getElementById("due_date").value;
-        this.priority = priority = document.getElementById('priority').value;
+        this.title = document.getElementById("title").value;
+        this.description  = document.getElementById("description").value;
+        this.due_date = document.getElementById("due_date").value;
+        this.priority = document.getElementById('priority').value;
+    
     }
+    
 }
 
 function addTodo(event) {
     event.preventDefault();
-    form.classList.remove('active')
-    newTodo = new Todo (title, description, due_date, priority)
-    mytodos.push(newTodo)
-    console.log(mytodos)
-    render()
-    setData()
-  
+    form.classList.remove('active');
+    newTodo = new Todo (title, description, due_date, priority);
+    mytodos.push(newTodo);
+    console.log(mytodos);
+    render();
+    setData();
+    
     
 }
 
@@ -42,6 +45,7 @@ function render() {
     }
 }
 
+
 function Todo_items(item) {
     const todos = document.querySelector('.todos');
     const todo = document.createElement('div');
@@ -54,24 +58,24 @@ function Todo_items(item) {
     todo.classList.add('todo');
     todo.setAttribute('id', mytodos.indexOf(item));
 
-    titl.textContent = item.title
+    titl.innerHTML = item.title
     titl.setAttribute('id', 'todo_name');
     todo.appendChild(titl);
 
-    description.textContent = item.description
+    description.innerHTML = item.description
     description.setAttribute('id', 'description');
     todo.appendChild(description);
 
-    due_date.textContent = item.due_date
+    due_date.innerHTML = item.due_date
     due_date.setAttribute('id', 'countdown');
     todo.appendChild(due_date);
 
-    priority.textContent = item.priority
+    priority.innerHTML = item.priority
     priority.setAttribute('id', 'priority');
-
     todo.appendChild(priority);
 
     todos.appendChild(todo)
+    
 }
 function setData() {
     localStorage.setItem(mytodos, JSON.stringify(mytodos));
