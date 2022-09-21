@@ -69,4 +69,16 @@ body{
 }
 .panel a {
     margin: 35px;
+    display: flex;
+    align-items: center;
 }
+#icons {
+    height: 3vh;
+}
+[data-tab-content] {
+    display: none;
+}
+#active[data-tab-content] {
+    display: block;
+}
+
