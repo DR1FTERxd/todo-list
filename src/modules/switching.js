@@ -8,13 +8,10 @@ function switching(){
         tab.addEventListener('click', () => {
             const target =  document.querySelector(tab.dataset.tabTarget);
             tabContents.forEach(tabContent => {
-                tabContent.removeAttribute('id', 'active')
-            })
-            tabs.forEach(tab => {
-                tab.removeAttribute('id', 'active')
-            })
-            tab.setAtribute('id', 'active')
-            target.setAtribute('id', 'active')
+            tabContent.removeAttribute('active')
+            console.log('aa')
+        })
+            target.setAttribute('id', 'active')
         })
     })
     }
@@ -23,6 +20,7 @@ function switching(){
 
 function work5() {
     switching()
+    
 }
 
 export {work5}
