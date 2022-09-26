@@ -7,7 +7,6 @@ todoBtn.addEventListener('click', addTodo)
 const form = document.getElementById('Form');
 
 
-
 let mytodos = [];
 let newTodo;
 
@@ -30,7 +29,7 @@ function addTodo(event) {
     console.log(mytodos);
     render();
     setData();
-    
+    todo_p.addEventListener('click', console.log('aaaa'))
     
 }
 
@@ -96,7 +95,7 @@ function restore() {
 function work2(){
     addTodo();
     restore()
-    
+   
     
 };
 

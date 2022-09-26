@@ -22,10 +22,10 @@
     
     <div class="screen">
         <div class="panel">
-            <a data-tab-target="#todos"><img src="/dist/icons/clipboard-check-outline.svg" id="icons"> Todos</a>
-            <a data-tab-target="#projects"><img src="/dist/icons/email-outline.svg" id="icons">Projects</a>
-            <a data-tab-target="#today-btn"><img src="/dist/icons/clock-time-twelve.svg" id="icons">Today</a>
-            <a data-tab-target="#tommorow-btn"><img src="/dist/icons/clock-time-twelve-outline.svg" id="icons">Tomorow</a>
+            <p id="todo_panel"><img src="/dist/icons/clipboard-check-outline.svg" id="icons"> Todos</p>
+            <p id="project_panel"><img src="/dist/icons/email-outline.svg" id="icons">Projects</p>
+            <p id="today_panel"><img src="/dist/icons/clock-time-twelve.svg" id="icons">Today</p>
+            <p id="tommorow_panel"><img src="/dist/icons/clock-time-twelve-outline.svg" id="icons">Tomorow</p>
         </div>
 
         <div id="Form">
@@ -56,8 +56,10 @@
                 </form>
             </div> 
         </div>
-        <div id="todos" data-tab-content="#todos" ></div>
-        <div id="projects" data-tab-content="#projects"></div>
+        <div id="screens">
+            <div class="todos"  ></div>
+            <div class="projects"id="active">aa</div>
+        </div>
     </div>
        
         

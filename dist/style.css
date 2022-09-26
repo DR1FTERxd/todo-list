@@ -45,7 +45,7 @@ body{
     flex-direction: column;
 }
 
-.todos{
+#screens{
     width: 70vw;
     float: right;
 }
@@ -67,7 +67,7 @@ body{
     flex-direction: column;
     
 }
-.panel a {
+.panel p {
     margin: 35px;
     display: flex;
     align-items: center;
@@ -75,10 +75,18 @@ body{
 #icons {
     height: 3vh;
 }
-[data-tab-content] {
+
+
+.todos  {
     display: none;
 }
-#active[data-tab-content] {
+.todos#active{
+    display: block;
+}
+.projects  {
+    display: none;
+}
+.projects#active {
     display: block;
 }
 
