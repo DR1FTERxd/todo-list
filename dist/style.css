@@ -45,7 +45,7 @@ body{
     flex-direction: column;
 }
 
-#screens{
+.tab-content{
     width: 70vw;
     float: right;
 }
@@ -77,16 +77,16 @@ body{
 }
 
 
-.todos  {
+#todos  {
     display: none;
 }
-.todos#active{
+#todos.active{
     display: block;
 }
-.projects  {
+#projects  {
     display: none;
 }
-.projects#active {
+#projects.active {
     display: block;
 }
 

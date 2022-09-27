@@ -35,7 +35,7 @@ function addTodo(event) {
 
 
 function render() {
-    const display = document.querySelector('.todos');
+    const display = document.querySelector('#todos');
     const todos = document.querySelectorAll('.todo');
     todos.forEach(todo => display.removeChild(todo));
 
@@ -46,7 +46,7 @@ function render() {
 
 
 function Todo_items(item) {
-    const todos = document.querySelector('.todos');
+    const todos = document.querySelector('#todos');
     const todo = document.createElement('div');
     const titl = document.createElement('div');
     const description = document.createElement('div');
