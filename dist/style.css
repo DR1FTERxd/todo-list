@@ -65,6 +65,8 @@ body{
     font-size: xx-large;
     display: flex;
     flex-direction: column;
+    list-style-type: none; 
+    padding-left: 0;
     
 }
 .panel p {
@@ -77,16 +79,9 @@ body{
 }
 
 
-#todos  {
+[data-tab-content] {
     display: none;
 }
-#todos.active{
+.active[data-tab-content]{
     display: block;
 }
-#projects  {
-    display: none;
-}
-#projects.active {
-    display: block;
-}
-

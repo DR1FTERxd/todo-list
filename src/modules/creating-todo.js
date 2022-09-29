@@ -29,7 +29,7 @@ function addTodo(event) {
     console.log(mytodos);
     render();
     setData();
-    todo_p.addEventListener('click', console.log('aaaa'))
+    
     
 }
 
@@ -89,6 +89,8 @@ function restore() {
         render()
     }
 }
+
+
 
 
 
