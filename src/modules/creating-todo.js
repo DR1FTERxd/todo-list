@@ -1,5 +1,4 @@
-import { mdiConsoleNetworkOutline } from '@mdi/js';
-import {alertime} from './todo-date'
+import { formatDistanceToNow, formatDistanceToNowStrict } from "date-fns";
 
 const todoBtn = document.getElementById('btnadd');
 todoBtn.addEventListener('click', addTodo)
@@ -51,9 +50,13 @@ function Todo_items(item) {
     const titl = document.createElement('div');
     const description = document.createElement('div');
     const due_date = document.createElement('div')
-
     const priority = document.createElement('div');
 
+    const result = formatDistanceToNowStrict(
+        new Date(item.due_date)
+      )
+    
+        
     todo.classList.add('todo');
     todo.setAttribute('id', mytodos.indexOf(item));
 
@@ -65,13 +68,24 @@ function Todo_items(item) {
     description.setAttribute('id', 'description');
     todo.appendChild(description);
 
-    due_date.innerHTML = item.due_date
+
+    due_date.innerHTML = result
     due_date.setAttribute('id', 'countdown');
     todo.appendChild(due_date);
+    console.log(result)
+    console.log(item.due_date)
 
     priority.innerHTML = item.priority
     priority.setAttribute('id', 'priority');
     todo.appendChild(priority);
+    if(item.priority == 'High'){
+        todo.setAttribute('priority', 'high')
+    } else if(item.priority == 'Medium'){
+        todo.setAttribute('priority', 'medium')
+    } else if(item.priority == 'Low'){
+        todo.setAttribute('priority', 'low')
+    }
+
 
     todos.appendChild(todo)
     

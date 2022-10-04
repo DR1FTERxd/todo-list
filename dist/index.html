@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="header">
             <div id="name">
                 <p>Todo-Est</p>
@@ -28,20 +29,20 @@
                 <h1>New todo</h1>
 
                 <form class ="form-container">
-                    <label for="title"><b>name</b></label>
-                    <input type="text"  placeholder="title" name="title" id="title" required>
+                    <label for="title"><b>Name</b></label>
+                    <input type="text"  placeholder="Title" name="title" id="title" required>
                     
-                    <label for="description"><b>description</b></label>
-                    <input type="text" name="description" id="description">
+                    <label for="description"><b>Description</b></label>
+                    <input type="text" placeholder="Description" name="description" id="description" maxlength="100" >
 
-                    <label for="due_date"><b>due date</b></label>
-                    <input type="date" value="date" id="due_date" required>
+                    <label for="due_date"><b>Due-date</b></label>
+                    <input type="datetime-local" value="date" id="due_date" required>
 
-                    <label for="priority" ><b>priority</b></label>
+                    <label for="priority" ><b>Priority</b></label>
                     <select id="priority" required>
-                        <option value="high">high</option>
-                        <option value="medium">medium</option>
-                        <option value="low">low</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
                     </select>
 
                     <button type="submit" id="btnadd" >Make a todo</button>
@@ -51,10 +52,15 @@
                 </form>
             </div> 
         </div>
+
+
         <div class="tab-content">
-            <div id="todos"  data-tab-content ></div>
+            <div id="todos"  data-tab-content class="active"></div>
             <div id="projects" data-tab-content >aa</div>
         </div>
+
+
+
     </div>
        
         
